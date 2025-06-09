@@ -2,7 +2,8 @@ import Timeline, { TTimelineEvent } from "@/components/Timeline/Timeline";
 
 const educationEvents: TTimelineEvent[] = [
   {
-    role: "First Class Honours B.Sc Computer Science - Loughborough university",
+    title:
+      "First Class Honours B.Sc Computer Science - Loughborough university",
     startdate: "October 2020",
     endDate: "June 2024",
     bulletpointLists: [
@@ -16,7 +17,7 @@ const educationEvents: TTimelineEvent[] = [
     ],
   },
   {
-    role: "Wymondham High Sixth Form",
+    title: "Wymondham High Sixth Form",
     startdate: "September 2018",
     endDate: "June 2020",
     bulletpointLists: [
@@ -27,7 +28,7 @@ const educationEvents: TTimelineEvent[] = [
     ],
   },
   {
-    role: "Wymondham High Academy",
+    title: "Wymondham High Academy",
     startdate: "September 2013",
     endDate: "June 2018",
     bulletpointLists: [
@@ -51,7 +52,9 @@ const educationEvents: TTimelineEvent[] = [
 const Education = () => {
   return (
     <div className="flex flex-col gap-4">
-      <Timeline events={educationEvents} />
+      <div className="sm:px-2 md:px-4 md:py-2 lg:px-6 lg:py-4">
+        <Timeline events={educationEvents} />
+      </div>
     </div>
   );
 };

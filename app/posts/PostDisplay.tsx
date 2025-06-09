@@ -37,7 +37,7 @@ const PostDisplay: React.FC<{
   }, [searchValues]);
 
   return (
-    <div className="w-full flex flex-col gap-10">
+    <div className="w-full flex flex-col gap-8">
       <Section
         id="post-search"
         title="Posts"

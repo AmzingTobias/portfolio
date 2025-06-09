@@ -30,9 +30,11 @@ const CertificationSpotlight: React.FC<{
           {cert.name} - {cert.description}
         </h3>
         {cert.dateObtained === undefined ? (
-          <p className="text-lg font-bold text-secondary">*Working Towards</p>
+          <p className="text-lg font-bold text-secondary-foreground">
+            *Working Towards
+          </p>
         ) : (
-          <p className="text-base text-secondary">
+          <p className="text-base text-secondary-foreground">
             Obtained: {cert.dateObtained.toLocaleDateString()}
           </p>
         )}

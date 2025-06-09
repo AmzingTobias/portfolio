@@ -36,7 +36,7 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
   return (
     <div
       style={{ maxWidth: 432 }}
-      className="flex flex-col gap-4 hover:cursor-pointer transition-colors duration-150 hover:hover:bg-accent/70 p-4 w-full"
+      className="flex flex-col gap-4 hover:cursor-pointer transition-colors duration-150 hover:hover:bg-secondary-foreground/5 p-4 w-full"
     >
       <Link href={link_to_post}>
         <Image
@@ -50,9 +50,7 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-1">
           <div className="flex flex-row items-start justify-between">
-            <h3 className="text-2xl font-semibold text-secondary">
-              {postcard.title}
-            </h3>
+            <h3 className="text-2xl font-semibold ">{postcard.title}</h3>
             {displayTag ? (
               <div className="">
                 <Tag tag_for_post={postcard.tag} />
@@ -62,9 +60,9 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
             )}
           </div>
           <div className="flex w-full">
-            <small className="flex italic">
+            <p className="text-sm sm:text-sm transition italic font-semibold text-secondary">
               {postcard.date.toLocaleDateString()}
-            </small>
+            </p>
           </div>
         </div>
         {postcard.desc && <p>{postcard.desc}</p>}

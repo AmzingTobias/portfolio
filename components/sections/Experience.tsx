@@ -2,15 +2,15 @@ import Timeline, { TTimelineEvent } from "@/components/Timeline/Timeline";
 
 const experienceEvents: TTimelineEvent[] = [
   {
-    role: "Associate Security Consultant",
-    location: "LRQA",
+    title: "Associate Security Consultant",
+    role: "LRQA",
     startdate: "September 2024",
     endDate: "Current",
     bulletpointLists: [],
   },
   {
-    role: "Software Engineer Industrial placement",
-    location: "BAE Systems",
+    title: "Software Engineer - Industrial placement",
+    role: "BAE Systems",
     startdate: "2022",
     endDate: "2023",
     bulletpointLists: [
@@ -28,8 +28,8 @@ const experienceEvents: TTimelineEvent[] = [
     ],
   },
   {
-    role: "Crew Trainer",
-    location: "McDonald's",
+    title: "Crew Trainer",
+    role: "McDonald's",
     startdate: "2018",
     endDate: "2022",
     bulletpointLists: [
@@ -52,8 +52,8 @@ const experienceEvents: TTimelineEvent[] = [
     ],
   },
   {
-    role: "Work experience",
-    location: "Accumulate Wealth Management Ltd",
+    title: "Work experience",
+    role: "Accumulate Wealth Management Ltd",
     startdate: "2019",
     details:
       "This was a second job alongside McDonald's that allowed me to help save for a car, which gave me more flexibility in my working times at McDonald's",
@@ -62,8 +62,8 @@ const experienceEvents: TTimelineEvent[] = [
     ],
   },
   {
-    role: "Work experience",
-    location: "ECS Digital, London",
+    title: "Work experience",
+    role: "ECS Digital, London",
     startdate: "2019",
     endDate: "Between GCSEs and Sixth form",
     bulletpointLists: [
@@ -78,8 +78,8 @@ const experienceEvents: TTimelineEvent[] = [
     ],
   },
   {
-    role: "Voluntary work",
-    location: "People for Animal Care Trust (PACT)",
+    title: "Voluntary work",
+    role: "People for Animal Care Trust (PACT)",
     startdate: "2017",
     bulletpointLists: [
       {
@@ -98,7 +98,9 @@ const experienceEvents: TTimelineEvent[] = [
 const Experience = () => {
   return (
     <div className="flex flex-col gap-4">
-      <Timeline events={experienceEvents} />
+      <div className="sm:px-2 md:px-4 md:py-2 lg:px-6 lg:py-4">
+        <Timeline events={experienceEvents} />
+      </div>
     </div>
   );
 };
