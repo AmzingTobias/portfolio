@@ -61,7 +61,7 @@ const PostSearchBar: React.FC<{
             ))}
           </div>
         )}
-        <small>Posts Returned: {numberOfSearchResults}</small>
+        <small>Posts Retrieved: {numberOfSearchResults}</small>
       </div>
     </div>
   );

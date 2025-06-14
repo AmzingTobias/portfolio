@@ -1,32 +1,39 @@
 import CertificationSpotlight, {
   ObtainedCert,
 } from "@/components/CertificationSpotlight";
-import oscp from "@/public/certifications/oscp.svg";
+import oscp from "@/public/certifications/oscp.png";
+import oscpPlus from "@/public/certifications/oscp-plus.png";
 import htbPenTesting from "@/public/certifications/HTB-Certified-Penetration-Testing-Specialist.webp";
 import burpsuiteCertifiedPractioner from "@/public/certifications/BurpSuite-Certified-Practioner.svg";
 
 const obtainedCertifications: ObtainedCert[] = [
   {
+    image: { src: oscpPlus, alt: "OSCP+ Badge" },
+    name: "OffSec Certified Professional+",
+    dateObtained: new Date("2025-05-13"),
+    description: "(OSCP+)",
+  },
+  {
     image: { src: oscp, alt: "OSCP Badge" },
     name: "Offensive Security Certified Professional",
-    dateObtained: undefined,
+    dateObtained: new Date("2025-05-13"),
     description: "(OSCP)",
   },
-  {
-    image: { src: htbPenTesting, alt: "HTB CPTS Badge" },
-    name: "HTB Certified Penetration Testing Specialist",
-    dateObtained: undefined,
-    description: "(HTB CPTS)",
-  },
-  {
-    image: {
-      src: burpsuiteCertifiedPractioner,
-      alt: "Burp Suite Certified Practitioner Badge",
-    },
-    name: "Burp Suite Certified Practitioner",
-    dateObtained: undefined,
-    description: "(BSCP)",
-  },
+  // {
+  //   image: { src: htbPenTesting, alt: "HTB CPTS Badge" },
+  //   name: "HTB Certified Penetration Testing Specialist",
+  //   dateObtained: undefined,
+  //   description: "(HTB CPTS)",
+  // },
+  // {
+  //   image: {
+  //     src: burpsuiteCertifiedPractioner,
+  //     alt: "Burp Suite Certified Practitioner Badge",
+  //   },
+  //   name: "Burp Suite Certified Practitioner",
+  //   dateObtained: undefined,
+  //   description: "(BSCP)",
+  // },
 ];
 
 const Certifications = () => {

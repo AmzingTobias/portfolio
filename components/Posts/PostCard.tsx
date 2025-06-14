@@ -15,7 +15,7 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
   postcard,
   displayTag,
 }) => {
-  let link_to_post = "";
+  let link_to_post = "/posts";
 
   switch (postcard.tag) {
     case TAGS.BLOG:
