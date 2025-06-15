@@ -5,7 +5,7 @@ export type ObtainedCert = {
   image: { src: any; alt: string };
   name: string;
   dateObtained?: Date;
-  description: string;
+  abbreviation: string;
 };
 
 const CertificationSpotlight: React.FC<{
@@ -27,7 +27,7 @@ const CertificationSpotlight: React.FC<{
       />
       <div className="flex flex-col p-4 font-medium">
         <h3 className="text-2xl">
-          {cert.name} - {cert.description}
+          {cert.name} <span className="font-semibold">{cert.abbreviation}</span>
         </h3>
         {cert.dateObtained === undefined ? (
           <p className="text-lg font-bold text-secondary-foreground">

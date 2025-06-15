@@ -53,16 +53,6 @@ const experienceEvents: TTimelineEvent[] = [
   },
   {
     title: "Work experience",
-    role: "Accumulate Wealth Management Ltd",
-    startdate: "2019",
-    details:
-      "This was a second job alongside McDonald's that allowed me to help save for a car, which gave me more flexibility in my working times at McDonald's",
-    bulletpointLists: [
-      { title: "Responsibilities:", points: ["General administration work"] },
-    ],
-  },
-  {
-    title: "Work experience",
     role: "ECS Digital, London",
     startdate: "2019",
     endDate: "Between GCSEs and Sixth form",

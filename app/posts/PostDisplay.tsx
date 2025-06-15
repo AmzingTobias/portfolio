@@ -10,7 +10,8 @@ import { PostCardInfo } from "@/components/Posts/PostCard";
 const PostDisplay: React.FC<{
   posts: PostCardInfo[];
   tagsDisabled: boolean;
-}> = ({ posts: initialPostCards, tagsDisabled }) => {
+  pageTitle?: string;
+}> = ({ posts: initialPostCards, tagsDisabled, pageTitle = "Posts" }) => {
   const defaultSearchValues: Search = {
     term: "",
     tagsToSearch: ALL_TAGS,
@@ -40,7 +41,7 @@ const PostDisplay: React.FC<{
     <div className="w-full flex flex-col gap-8">
       <Section
         id="post-search"
-        title="Posts"
+        title={pageTitle}
         children={
           <PostSearchBar
             searchValues={searchValues}
