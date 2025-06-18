@@ -6,17 +6,17 @@ const DROP_DOWN_ITEMS = [
   {
     title: "CTFs",
     description: "CTF walkthroughs.",
-    link: "/posts/ctf",
+    link: "/ctf",
   },
   {
     title: "Blog",
     description: "Blog posts about topics I've found interesting.",
-    link: "/posts/blog",
+    link: "/blog",
   },
   {
     title: "Projects",
     description: "Projects / Tools I've created.",
-    link: "/posts/projects",
+    link: "/projects",
   },
 ];
 

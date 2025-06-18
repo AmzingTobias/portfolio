@@ -31,7 +31,7 @@ function Navigation() {
   return (
     <header className="bg-[#181818] min-w-screen flex flex-row items-center p-3 justify-between max-w-screen sticky top-0 z-10">
       <h1 className="flex font-bold text-2xl text-secondary select-none">
-        Tobias Dunn
+        <Link href={"/"}>Tobias Dunn</Link>
       </h1>
       <div className="flex flex-col items-end mr-1">
         <NavigationMenu className="flex">

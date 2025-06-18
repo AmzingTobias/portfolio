@@ -51,7 +51,7 @@ const Tag: React.FC<TagProps> = ({ tag_for_post, selectable }) => {
         selectable === undefined
           ? "opacity-100"
           : selectable.selected === true
-          ? "opacity-100 hover:opacity-50"
+          ? "opacity-100 hover:opacity-50 transition-opacity duration-400"
           : "opacity-20"
       )}
       style={{

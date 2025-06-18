@@ -1,15 +1,17 @@
 import { PostCardInfo } from "@/components/Posts/PostCard";
 import PostDisplay from "@/app/posts/PostDisplay";
-import ctfPosts from "@/app/posts/ctf/ctf-posts";
-import projectPosts from "@/app/posts/projects/project-posts";
-import blogPosts from "@/app/posts//blog/blog-posts";
+import ctfPosts from "@/app/ctf/ctf-posts";
+import projectPosts from "@/app/projects/project-posts";
+import blogPosts from "@/app/blog/blog-posts";
 
-const postcard_raw: PostCardInfo[] = [ctfPosts, projectPosts, blogPosts].flat();
+const postcard_raw: PostCardInfo[] = [ctfPosts, projectPosts, blogPosts]
+  .flat()
+  .sort((a, b) => (a.date < b.date ? 1 : -1));
 
-const dublicateItems = (arr: any[], numberOfRepetitions: number) =>
+const duplicateItems = (arr: any[], numberOfRepetitions: number) =>
   arr.flatMap((i) => Array.from({ length: numberOfRepetitions }).fill(i));
 
-const defaultPostCards = dublicateItems(postcard_raw, 25) as PostCardInfo[];
+const defaultPostCards = duplicateItems(postcard_raw, 1) as PostCardInfo[];
 
 export default function Home() {
   return (

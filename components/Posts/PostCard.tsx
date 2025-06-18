@@ -15,11 +15,11 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
   postcard,
   displayTag,
 }) => {
-  let link_to_post = "/posts";
+  let link_to_post = "";
 
   switch (postcard.tag) {
     case TAGS.BLOG:
-      link_to_post += "/blogs";
+      link_to_post += "/blog";
       break;
     case TAGS.CTF:
       link_to_post += "/ctf";
@@ -34,19 +34,18 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
   link_to_post += postcard.project_page_link;
 
   return (
-    <div
+    <Link
       style={{ maxWidth: 432 }}
+      href={link_to_post}
       className="flex flex-col gap-4 hover:cursor-pointer transition-colors duration-150 hover:hover:bg-secondary-foreground/5 p-4 w-full"
     >
-      <Link href={link_to_post}>
-        <Image
-          src={postcard.image}
-          alt={postcard.title}
-          width={432}
-          height={480}
-          className=""
-        />
-      </Link>
+      <Image
+        src={postcard.image}
+        alt={postcard.title}
+        width={432}
+        height={480}
+        className="aspect-square object-cover w-full"
+      />
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-1">
           <div className="flex flex-row items-start justify-between">
@@ -67,7 +66,7 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
         </div>
         {postcard.desc && <p>{postcard.desc}</p>}
       </div>
-    </div>
+    </Link>
   );
 };
 
