@@ -14,13 +14,5 @@ const duplicateItems = (arr: any[], numberOfRepetitions: number) =>
 const defaultPostCards = duplicateItems(postcard_raw, 1) as PostCardInfo[];
 
 export default function Home() {
-  return (
-    <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-      <div className="flex flex-col w-full items-center justify-items-center min-h-screen gap-16">
-        <div className="w-full max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-screen-2xl">
-          <PostDisplay posts={defaultPostCards} tagsDisabled={false} />
-        </div>
-      </div>
-    </main>
-  );
+  return <PostDisplay posts={defaultPostCards} tagsDisabled={false} />;
 }
