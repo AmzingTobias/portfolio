@@ -5,6 +5,7 @@ export type ObtainedCert = {
   image: { src: any; alt: string };
   name: string;
   dateObtained?: Date;
+  expires?: Date;
   abbreviation: string;
 };
 
@@ -34,8 +35,16 @@ const CertificationSpotlight: React.FC<{
             *Working Towards
           </p>
         ) : (
-          <p className="text-base text-secondary-foreground">
+          <p className="text-base text-secondary-foreground flex flex-row gap-4 items-center-safe justify-between">
             Obtained: {cert.dateObtained.toLocaleDateString()}
+            {cert.expires !== undefined &&
+            cert.expires.valueOf() < Date.now() ? (
+              <span className="text-secondary">
+                Expired: {cert.expires.toLocaleDateString()}
+              </span>
+            ) : (
+              ""
+            )}
           </p>
         )}
       </div>

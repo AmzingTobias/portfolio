@@ -14,6 +14,7 @@ const obtainedCertifications: ObtainedCert[] = [
     image: { src: oscpPlus, alt: "OSCP+ Badge" },
     name: "OffSec Certified Professional+",
     dateObtained: new Date("2025-05-13"),
+    expires: new Date("2028-06-12"),
     abbreviation: "(OSCP+)",
   },
   {
