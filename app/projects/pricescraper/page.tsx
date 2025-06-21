@@ -8,11 +8,32 @@ import ProjectDisplay from "@/components/project/ProjectDisplay";
 const pricescraperProject: ProjectInfo = {
   name: "PriceScraper",
   details: [
-    "My goal with PriceScraper to turn my original price scraping program, that I was using via the command line, into a more user friendly and easily customizable tool. This involved me re-writing my original price scraping program, I did this to improve modularization, now it’s very quick and easy for me to add a new supported site that the program can scrape from, while before it was a lot more intertwined. I’ve also tried to improve the error handling, to stop the program from exiting when errors occur. With the new implementation, I had to create it with more than one user in mind, while with the original program, it was just me who used it. ",
-    "I knew I needed a user interface for the program, as it was becoming tiresome to add new products via the command line, and I thought this would be a good idea to learn some new skills for web development. I researched some frameworks that I could use, and settled on Express JS for the backend, and React JS for the front end.",
-    "I had some experience with Express JS already, having used it in one of my university modules, so I decided to start with coding the backend first (I also have an easier time with coding backend applications). My development process was quite straightforward, I would group APIs together, and have files for each group, e.g., an API dedicated to users, another for products, etc. I used Insomnia to test my APIs were working.",
-    "I then moved on to React JS, this was a lot newer to me and I was still grasping the whole idea of components, my biggest struggle is with responsive design, It was always a focus during the development, and I think I did a semi-good job, I learnt a lot in the process, which I’ve brought forward with this website. I built each page and connected the relevant APIs that I had coded before, and then I had my functioning website.",
-    "For the database storage I’m using SQLite3, I would like future projects to use a more server sided SQL solution, but this worked for my needs, and it was something I had a good experience with.",
+    "I originally created PriceScraper after noticing that third party websites I would commonly purchase game prices would change their prices, sometimes multiple times in a week. Since most third-party websites don't track this history, I wanted a way to monitor price trends over time and receive real-time notifications when a game's price changed.",
+    "The initial version of PriceScraper was a simple command-line tool written in Python. It scraped price data from specific storefronts and sent updates via Discord webhooks whenever prices changed. This worked well for tracking a small number of games.",
+    "However, adding new games was tedious: every game had to be manually configured via the CLI, including details like artwork and metadata. It quickly became clear that a more user-friendly interface was needed.",
+    "To improve usability, I built a web interface using React for the front-end and Express for the back-end. This was my first full-stack web application, and it involved a steep learning curve as I learned how to:",
+    [
+      "Design RESTful APIs",
+      "Handle asynchronous data fetching",
+      "Manage client-side state and routing in React",
+    ],
+    "This setup made it easier to view tracked games and manage them via the browser. However, the backend still relied on the original Python script to handle scraping.",
+    "Over time, a few major issues emerged:",
+    [
+      "The Python script had poor error handling and would occasionally crash.",
+      "It had no recovery mechanism, so I had to manually log into the server to restart it.",
+    ],
+    "These issues led me to rethink the architecture from the ground up.",
+    "I decided to rewrite the scraping logic in Rust to improve performance, reliability, and error handling. In the new version:",
+    [
+      "The scraper runs as a standalone Rust binary that performs its task and exits.",
+      "The Express backend is now responsible for triggering the scraper on a regular schedule.",
+      "I improved the error handling to ensure crashes are logged clearly, and failures don't silently break the system.",
+    ],
+    "This change not only improved stability, but also gave me hands-on experience with systems programming and asynchronous networking in Rust.",
+    "Previously, every game had to be added manually—including uploading the game artwork and typing in details like title and price.",
+    "With the Rust rewrite, I added a game import feature: now, users can paste a link to a supported storefront, and the scraper will automatically extract the game's metadata and artwork, then store it in the database. This drastically reduced the friction in adding new games.",
+    "With the core system stable and the Rust-based scraper working reliably, my next goals is to recreate the web interface in Next.js and make some security improvements to the backend Express server.",
   ],
   images: {
     srcs: [

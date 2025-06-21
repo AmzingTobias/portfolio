@@ -42,6 +42,7 @@ const ProjectImages: React.FC<IProjectImageProps> = ({
           <CarouselItem key={index}>
             <Image
               loading="eager"
+              priority
               src={img_to_display.img}
               alt={img_to_display.alt}
             />
