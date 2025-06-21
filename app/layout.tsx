@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistMono.className} bg-[#181818] flex flex-col antialiased max-w-screen`}
+        className={`${geistMono.className} bg-background flex flex-col antialiased max-w-screen`}
       >
         <Navigation />
         <div className="bg-accent flex flex-col pt-14 gap-14">

@@ -10,7 +10,7 @@ function Section({
   return (
     <div
       id={id}
-      className="w-full bg-[#181818] scroll-mt-24 p-6 flex flex-col gap-2"
+      className="w-full bg-background scroll-mt-24 p-6 flex flex-col gap-2"
     >
       <h1 className="text-2xl font-bold text-secondary">{title}</h1>
       {children}

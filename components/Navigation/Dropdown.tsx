@@ -38,7 +38,7 @@ const DropDown: React.FC<DropDownProps> = ({
       onMouseEnter={showDropdown}
       onMouseLeave={hideDropdown}
       className={cn(
-        "bg-[#181818] p-3 mt-2 z-50 rounded-xl w-[340px] absolute shadow-lg transition-all duration-200",
+        "bg-background p-3 mt-2 z-50 rounded-xl w-[340px] absolute shadow-lg transition-all duration-200",
         position === "left" ? "left-0" : "-right-3",
         dropdownShown
           ? "opacity-100 translate-y-0 pointer-events-auto"
