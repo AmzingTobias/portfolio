@@ -7,6 +7,7 @@ export default function Home() {
       id=""
       title="Road Walkthrough (TryHackMe)"
       children={<RoadWalkthrough />}
+      datePosted={new Date("2025-06-17")}
     />
   );
 }

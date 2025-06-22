@@ -67,7 +67,12 @@ const pricescraperProject: ProjectInfo = {
 };
 
 const PriceScraperProjectPage = () => {
-  return <ProjectDisplay project={pricescraperProject} />;
+  return (
+    <ProjectDisplay
+      project={pricescraperProject}
+      datePosted={new Date("2025-06-07")}
+    />
+  );
 };
 
 export default PriceScraperProjectPage;

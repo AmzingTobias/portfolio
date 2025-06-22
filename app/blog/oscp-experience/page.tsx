@@ -7,6 +7,7 @@ export default function Home() {
       id=""
       title="My Experience Passing OSCP"
       children={<OSCPExperience />}
+      datePosted={new Date("2025-06-22")}
     />
   );
 }

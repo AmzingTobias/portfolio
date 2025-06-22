@@ -10,7 +10,7 @@ const blogPosts: PostCardInfo[] = [
     desc: "My experience learning all the content required for the OSCP exam, what I did outside of the Offsec course content to prepare, and some small tips to help others planning to take the exam.",
     project_page_link: "/oscp-experience",
     tag: TAGS.BLOG,
-    date: new Date("2025-06-20"),
+    date: new Date("2025-06-22"),
   },
   // {
   //   title: "Why you should be using email address aliases",
