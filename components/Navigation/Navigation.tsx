@@ -29,7 +29,7 @@ function Navigation() {
   };
 
   return (
-    <header className="bg-background min-w-screen flex flex-row items-center p-3 justify-between max-w-screen sticky top-0 z-10">
+    <header className="bg-background min-w-screen flex flex-row items-center p-3 justify-between max-w-screen sticky top-0 z-10 border-secondary/80 border-2">
       <h1 className="flex font-bold text-2xl text-secondary select-none">
         <Link href={"/"}>Tobias Dunn</Link>
       </h1>

@@ -49,7 +49,7 @@ const DropDown: React.FC<DropDownProps> = ({
         {DROP_DOWN_ITEMS.map((item, index) => (
           <li
             key={index}
-            className="bg-accent p-2 hover:bg-accent/70 rounded-md transition-colors"
+            className="bg-accent p-2 hover:bg-accent/70 rounded-md transition-colors border-secondary/80 border-2"
           >
             <Link href={item.link}>
               <div className="text-sm">{item.title}</div>
