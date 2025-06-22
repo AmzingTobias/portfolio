@@ -36,11 +36,11 @@ const CertificationSpotlight: React.FC<{
           </p>
         ) : (
           <p className="text-base text-secondary-foreground flex flex-row gap-4 items-center-safe justify-between">
-            Obtained: {cert.dateObtained.toLocaleDateString()}
+            Obtained: {cert.dateObtained.toLocaleDateString("en-GB")}
             {cert.expires !== undefined &&
             cert.expires.valueOf() < Date.now() ? (
               <span className="text-secondary">
-                Expired: {cert.expires.toLocaleDateString()}
+                Expired: {cert.expires.toLocaleDateString("en-GB")}
               </span>
             ) : (
               ""

@@ -52,7 +52,7 @@ export default async function Footer() {
       {site_update !== undefined && (
         <small className="flex flex-row items-center">
           <AiOutlineHourglass />
-          &nbsp;Last Site Update: {site_update.toLocaleDateString()}
+          &nbsp;Last Site Update: {site_update.toLocaleDateString("en-GB")}
         </small>
       )}
     </footer>

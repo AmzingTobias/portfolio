@@ -18,7 +18,7 @@ function Section({
         <h1 className="text-2xl font-bold text-secondary">{title}</h1>
         {datePosted !== undefined && (
           <p className="text-secondary-foreground">
-            {datePosted.toLocaleDateString()}
+            {datePosted.toLocaleDateString("en-GB")}
           </p>
         )}
       </div>

@@ -60,7 +60,7 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
           </div>
           <div className="flex w-full">
             <p className="text-sm sm:text-sm transition italic font-semibold text-secondary">
-              {postcard.date.toLocaleDateString()}
+              {postcard.date.toLocaleDateString("en-GB")}
             </p>
           </div>
         </div>
