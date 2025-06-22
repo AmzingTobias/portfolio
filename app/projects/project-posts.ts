@@ -6,7 +6,7 @@ const projectPosts: PostCardInfo[] = [
   {
     title: "PriceScraper",
     image: pricescraper,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid animi exercitationem assumenda maxime non facilis molestiae reiciendis alias dolor minus libero tenetur magni provident quisquam commodi repellendus, natus iusto eaque.",
+    desc: "My price scraping application, targeted at third party game key distributors. It can monitor the history of prices and send notifications to users via Discord Webhooks when prices change.",
     project_page_link: "/pricescraper",
     tag: TAGS.PROJECTS,
     date: new Date("2025-06-07"),
