@@ -2,11 +2,22 @@ import Timeline, { TTimelineEvent } from "@/components/Timeline/Timeline";
 
 const experienceEvents: TTimelineEvent[] = [
   {
-    title: "Associate Security Consultant",
+    title: "Associate Security Consultant (Penetration Testing)",
     role: "LRQA",
     startdate: "September 2024",
     endDate: "Current",
-    bulletpointLists: [],
+    bulletpointLists: [
+      {
+        title: "Responsibilities:",
+        points: [
+          "System types tested: Web Apps & External Infrastructure.",
+          "Managing multiple clients to ensure a seamless delivery of back-to-back penetration tests.",
+          "My first ever penetration test I conducted received a report of the month award.",
+          "Creating tools to automate mine and my colleagues workflow.",
+          "Continuous research in my spare time to keep up to date with emerging threats.",
+        ],
+      },
+    ],
   },
   {
     title: "Software Engineer - Industrial placement",
@@ -47,38 +58,6 @@ const experienceEvents: TTimelineEvent[] = [
           "Communicating with the public",
           "Dealing with complaints and resolving issues",
           "Working within a team whilst still using my own initiative where appropriate",
-        ],
-      },
-    ],
-  },
-  {
-    title: "Work experience",
-    role: "ECS Digital, London",
-    startdate: "2019",
-    endDate: "Between GCSEs and Sixth form",
-    bulletpointLists: [
-      {
-        title: "Highlights: ",
-        points: [
-          "Developing new skills",
-          "Adjusting to a change of life working in London",
-          "Communicating with a new team",
-        ],
-      },
-    ],
-  },
-  {
-    title: "Voluntary work",
-    role: "People for Animal Care Trust (PACT)",
-    startdate: "2017",
-    bulletpointLists: [
-      {
-        title: "Responsibilities:",
-        points: [
-          "Caring for animals",
-          "Cleaning pens",
-          "Using my own initiative and dealing with members of the public",
-          "Completing tasks in a set time and under pressure",
         ],
       },
     ],
