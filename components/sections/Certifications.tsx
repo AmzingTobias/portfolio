@@ -87,7 +87,7 @@ const Certifications = () => {
             >
               <CertificationSpotlight cert={cert} index={index} />
               {index !== obtainedCertifications.length - 1 ? (
-                <hr className="bg-secondary/50 my-8 h-0.5 w-3/4"></hr>
+                <hr className="bg-secondary/50 my-4 md:my-4 h-0.5 w-3/4"></hr>
               ) : (
                 <></>
               )}

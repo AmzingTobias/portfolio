@@ -26,8 +26,8 @@ export default async function Footer() {
   }
 
   return (
-    <footer className="flex flex-col gap-1 justify-center text-secondary items-center  py-2 ">
-      <div className="row-start-3 flex gap-8 flex-wrap ">
+    <footer className="flex flex-col gap-2 justify-center text-secondary items-center py-2 ">
+      <div className="row-start-3 flex md:gap-8 gap-4 flex-wrap flex-col items-center md:flex-row">
         <a className={FOOTER_LINK_CLASS} href={`mailto:${CONTACT_EMAIL}`}>
           <AiFillMail />
           &nbsp;{CONTACT_EMAIL}

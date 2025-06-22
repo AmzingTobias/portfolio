@@ -18,7 +18,7 @@ const ProjectVisitBtns: React.FC<IProjectVisitBtns> = ({
   github_links,
 }) => {
   return (
-    <div className="w-full flex flex-row gap-2 items-center justify-center">
+    <div className="w-full flex flex-col md:flex-row gap-2 items-center justify-center">
       {visit_links?.map((link_info, index) => (
         <Link
           key={index}

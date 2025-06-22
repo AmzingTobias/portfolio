@@ -16,8 +16,8 @@ const CertificationSpotlight: React.FC<{
   return (
     <div
       className={cn(
-        "flex gap-8 items-center w-full",
-        index % 2 ? "flex-row" : "flex-row-reverse"
+        "flex gap-2 md:gap-8 items-center w-full flex-col",
+        index % 2 ? "lg:flex-row" : "lg:flex-row-reverse"
       )}
     >
       <Image
@@ -26,7 +26,7 @@ const CertificationSpotlight: React.FC<{
         height={180}
         alt={cert.image.alt}
       />
-      <div className="flex flex-col p-4 font-medium">
+      <div className="flex flex-col p-4 gap-2 font-medium items-center lg:items-baseline lg:text-start text-center">
         <h3 className="text-2xl">
           {cert.name} <span className="font-semibold">{cert.abbreviation}</span>
         </h3>
@@ -35,7 +35,7 @@ const CertificationSpotlight: React.FC<{
             *Working Towards
           </p>
         ) : (
-          <p className="text-base text-secondary-foreground flex flex-row gap-4 items-center-safe justify-between">
+          <p className="text-base text-secondary-foreground flex flex-col gap-1 lg:gap-2 items-center-safe lg:items-start justify-between">
             Obtained: {cert.dateObtained.toLocaleDateString("en-GB")}
             {cert.expires !== undefined &&
             cert.expires.valueOf() < Date.now() ? (
