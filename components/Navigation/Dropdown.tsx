@@ -45,11 +45,11 @@ const DropDown: React.FC<DropDownProps> = ({
           : "opacity-0 -translate-y-2 pointer-events-none"
       )}
     >
-      <ul className="grid gap-2 w-full">
+      <ul className="grid gap-4 w-full">
         {DROP_DOWN_ITEMS.map((item, index) => (
           <li
             key={index}
-            className="bg-accent p-2 hover:bg-accent/70 rounded-md transition-colors border-secondary/80 border-2"
+            className="bg-accent p-2 hover:bg-accent/70 rounded-md transition-colors border-secondary/80 shadow-[0_0_10px_var(--tw-shadow-color)] shadow-secondary border-2"
           >
             <Link href={item.link}>
               <div className="text-sm">{item.title}</div>
