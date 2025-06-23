@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation/Navigation";
+import Navbar from "@/components/Navigation/Navbar";
 import Footer from "@/components/Footer";
 
 const geistSans = Geist({
@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistMono.className} bg-background flex flex-col antialiased max-w-screen`}
       >
-        <Navigation />
+        <Navbar />
         <div className="bg-accent flex flex-col pt-14 gap-14">
           <main className="flex flex-col gap-[32px] items-center sm:items-start">
             <div className="flex flex-col w-full items-center justify-items-center min-h-screen gap-16">
