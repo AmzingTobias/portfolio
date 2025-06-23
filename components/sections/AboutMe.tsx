@@ -43,7 +43,7 @@ const AboutMe = () => {
         with my friends and family. I'm passionate about F1 (Mercedes), I watch
         on average about 85%+ of the races at their air time across a season,
         including the early morning races. I will occasionally play golf and
-        have an interest in Football, supporting my home team Norwich City.
+        have an interest in football, supporting my home team Norwich City.
       </p>
     </div>
   );
