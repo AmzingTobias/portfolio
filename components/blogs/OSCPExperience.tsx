@@ -18,7 +18,7 @@ const OSCPExperience = () => {
 
     <li>Fully compromised the Active Directory environment</li>
     <li>Fully compromised one standalone machine</li>
-    <li>Retrieved the       <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">local.txt</code> flag on another standalone machine</li>
+    <li>Retrieved the       <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">local.txt</code> flag on another standalone machine</li>
 
   </ul>
   <p className='my-2'>This left me with:</p>
@@ -30,8 +30,8 @@ const OSCPExperience = () => {
   </ul>
   <h2 className="text-xl font-semibold my-3 text-secondary text-center md:text-start">Lessons Learned the Hard Way</h2>
   <h3 className="text-lg font-medium my-2 text-secondary text-center md:text-start">Don’t Trust Your Tools Blindly</h3>
-  <p className='my-2'>On the box where I failed to escalate privileges, I found a file that had piqued my interest. I opened it with a program I’ve used for years (even before getting into cybersecurity), and it appeared empty. Running     <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">strings</code> returned barely anything useful.</p>
-  <p className='my-2'>Only after the exam did I test it using an online viewer and it opened perfectly. I also realized that simply running     <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">cat</code> on the file would have shown the information I needed.  </p>
+  <p className='my-2'>On the box where I failed to escalate privileges, I found a file that had piqued my interest. I opened it with a program I’ve used for years (even before getting into cybersecurity), and it appeared empty. Running     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">strings</code> returned barely anything useful.</p>
+  <p className='my-2'>Only after the exam did I test it using an online viewer and it opened perfectly. I also realized that simply running     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">cat</code> on the file would have shown the information I needed.  </p>
   <p className='my-2'>Lesson: Even if a tool has always worked for you, don’t assume it’s infallible. Always double-check using alternative methods.</p>
   <h3 className="text-lg font-medium my-2 text-secondary text-center md:text-start">Don’t Tunnel Vision</h3>
   <p className='my-2'>On the box where I couldn’t get in at all, I ignored trying default credentials. I had been misled by a honeypot and focused too long on the wrong path.</p>
@@ -40,14 +40,14 @@ const OSCPExperience = () => {
   <h3 className="text-lg font-medium my-2 text-secondary text-center md:text-start">Ligolo-ng</h3>
   <p className='my-2'>This isn’t covered in the PEN-200 course, but it’s incredibly useful for port tunnelling and pivoting into an Active Directory environment. I highly recommend learning it.</p>
   <h3 className="text-lg font-medium my-2 text-secondary text-center md:text-start">script</h3>
-  <p className='my-2'>This handy tool logs your terminal session. I used it during the exam to track every command and output. After the exam, I could     <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">cat</code> the script file to review everything which was super helpful for writing the report.</p>
-  <p className='my-2'>Despite using     <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">script</code>, I still made sure to take screenshots of every step, especially of flags and exploitation commands. Think of     <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">script</code> as your backup, not your primary evidence.</p>
+  <p className='my-2'>This handy tool logs your terminal session. I used it during the exam to track every command and output. After the exam, I could     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">cat</code> the script file to review everything which was super helpful for writing the report.</p>
+  <p className='my-2'>Despite using     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">script</code>, I still made sure to take screenshots of every step, especially of flags and exploitation commands. Think of     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">script</code> as your backup, not your primary evidence.</p>
   <h2 className="text-xl font-semibold my-3 text-secondary text-center md:text-start">Reporting</h2>
   <p className='my-2'>As a professional penetration tester, I’m comfortable with report writing. But even if you’re not, you can set yourself up for success by collecting solid evidence throughout the exam.</p>
   <ul className="ml-6 my-2 list-disc space-y-1">
 
     <li>Take screenshots often, especially of critical moments.</li>
-    <li>Use the       <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">script</code> tool to record terminal sessions.</li>
+    <li>Use the       <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">script</code> tool to record terminal sessions.</li>
     <li>Create separate folders for each box to stay organized.</li>
 
   </ul>
@@ -61,7 +61,7 @@ const OSCPExperience = () => {
 
     <li>Think critically - don’t get stuck on one idea.</li>
     <li>Learn tools like Ligolo-ng, even if they aren’t in the syllabus, just make sure they adhere to the exam rules</li>
-    <li>Document everything - screenshots +       <code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">script</code> = strong report.</li>
+    <li>Document everything - screenshots +       <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">script</code> = strong report.</li>
     <li>Try the basics first - default creds, misconfigs, etc.</li>
     <li>Use checklists to stay on track during the exam.</li>
 

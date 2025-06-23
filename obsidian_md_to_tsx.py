@@ -79,7 +79,7 @@ def html_to_jsx(soup: BeautifulSoup, indent=2):
             return f'{indent_str}<{tag_name} className="{heading_classes[tag_name]}">{escape_jsx_text(tag.get_text())}</{tag_name}>'
 
         if tag_name == "code" and tag.parent.name != "pre":
-            return f'{indent_str}<code className="bg-black/50 text-white px-2 py-1 rounded text-sm font-mono">{escape_jsx_text(tag.get_text())}</code>'
+            return f'{indent_str}<code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">{escape_jsx_text(tag.get_text())}</code>'
 
 
         if tag_name in {"ul", "ol"}:

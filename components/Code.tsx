@@ -19,7 +19,7 @@ const Code: React.FC<CodeProps> = ({ language = "", code }) => {
   };
 
   return (
-    <div className="relative my-6 bg-black/50 text-white overflow-hidden">
+    <div className="relative my-6 bg-accent text-white overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-2 border-b border-black-700">
         <span className="text-xs font-mono text-zinc-400 uppercase">
