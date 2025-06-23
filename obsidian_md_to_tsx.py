@@ -53,12 +53,12 @@ link_css_classes = "text-secondary-foreground underline hover:text-secondary-for
 
 def html_to_jsx(soup: BeautifulSoup, indent=2):
     heading_classes = {
-        "h1": "text-2xl font-bold my-4 text-secondary",
-        "h2": "text-xl font-semibold my-3 text-secondary",
-        "h3": "text-lg font-medium my-2 text-secondary",
-        "h4": "text-base font-medium my-2 text-secondary",
-        "h5": "text-base font-medium my-1 text-secondary",
-        "h6": "text-sm font-medium my-1 text-secondary"
+        "h1": "text-2xl font-bold my-4 text-secondary text-center md:text-start",
+        "h2": "text-xl font-semibold my-3 text-secondary text-center md:text-start",
+        "h3": "text-lg font-medium my-2 text-secondary text-center md:text-start",
+        "h4": "text-base font-medium my-2 text-secondary text-center md:text-start",
+        "h5": "text-base font-medium my-1 text-secondary text-center md:text-start",
+        "h6": "text-sm font-medium my-1 text-secondary text-center md:text-start"
     }
 
     def process_tag(tag: Tag, indent=2):
