@@ -19,7 +19,12 @@ const VerticalNavbar: React.FC<{ className?: string }> = ({ className }) => {
   const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false);
 
   return (
-    <div className={cn("w-full flex flex-col", className)}>
+    <div
+      className={cn(
+        "w-full flex flex-col sticky top-0 z-10 bg-background",
+        className
+      )}
+    >
       <div className="flex justify-between items-center p-4 border-b border-secondary w-full">
         <Link href="/" className="text-2xl font-bold text-secondary">
           Tobias Dunn

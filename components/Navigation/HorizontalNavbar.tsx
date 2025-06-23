@@ -13,7 +13,7 @@ import DropDown from "./Dropdown";
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-function HorizontalNavbar() {
+const HorizontalNavbar: React.FC<{ className?: string }> = ({ className }) => {
   const [dropdownShown, setDropdownShown] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -29,7 +29,12 @@ function HorizontalNavbar() {
   };
 
   return (
-    <header className="bg-background min-w-screen flex flex-col md:flex-row items-center p-3 justify-between max-w-screen sticky top-0 z-10 border-secondary/80  border-2">
+    <header
+      className={cn(
+        "bg-background min-w-screen flex flex-col md:flex-row items-center p-3 justify-between max-w-screen sticky top-0 z-10 border-secondary/80  border-2",
+        className
+      )}
+    >
       <h1 className="flex font-bold text-2xl text-secondary select-none">
         <Link href={"/"}>Tobias Dunn</Link>
       </h1>
@@ -101,6 +106,6 @@ function HorizontalNavbar() {
       </div>
     </header>
   );
-}
+};
 
 export default HorizontalNavbar;
