@@ -65,7 +65,7 @@ const Timeline: React.FC<ITimelineProps> = ({ events }) => {
             }}
           >
             <div className="flex-start flex items-center">
-              <div className="-ml-[0.560rem] -mt-2 mr-[1.05rem] flex h-4 w-4 items-center justify-center rounded-full bg-secondary"></div>
+              <div className="-ml-[0.560rem] -mt-2 mr-[1.05rem] flex h-4 w-4 items-center justify-center rounded-full min-w-4 min-h-4 bg-secondary"></div>
               <h4 className="-mt-2 text-md sm:text-xl font-semibold">
                 {event.title}
               </h4>
