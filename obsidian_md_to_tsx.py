@@ -1,18 +1,12 @@
 import os
 import re
-import base64
+import shutil
 import argparse
 import markdown
+from PIL import Image
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-
 # ---------- UTILS ----------
-
-def encode_image_to_base64(file_path):
-    with open(file_path, "rb") as f:
-        encoded = base64.b64encode(f.read()).decode("utf-8")
-    ext = os.path.splitext(file_path)[1][1:].lower()
-    return f"data:image/{ext};base64,{encoded}"
 
 def escape_jsx_text(text):
     return (text.replace("&", "&amp;")
@@ -35,14 +29,43 @@ def split_text_with_links(text: str):
         parts.append(("text", text[last_end:]))
     return parts
 
-# ---------- MARKDOWN HANDLING ----------
+# ---------- IMAGE HANDLING ----------
 
-def inline_images(markdown_text, attachments_path):
-    def replace_obsidian(match):
+def extract_and_copy_images(md_text, attachments_path, public_image_dir):
+    if os.path.exists(public_image_dir):
+        for filename in os.listdir(public_image_dir):
+            file_path = os.path.join(public_image_dir, filename)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+    else:
+        os.makedirs(public_image_dir)
+
+    image_mapping = {}
+    counter = 1
+
+    def replace_image(match):
+        nonlocal counter
         filename = match.group(1)
-        path = os.path.join(attachments_path, filename)
-        return f'![]({encode_image_to_base64(path)})' if os.path.exists(path) else match.group(0)
-    return re.sub(r'!\[\[(.*?)\]\]', replace_obsidian, markdown_text)
+        src_path = os.path.join(attachments_path, filename)
+        if os.path.exists(src_path):
+            ext = os.path.splitext(filename)[1].lower()
+            new_filename = f"image{counter}{ext}"
+            dest_path = os.path.join(public_image_dir, new_filename)
+
+            with Image.open(src_path) as img:
+                img.save(dest_path)
+
+            var_name = f"image{counter}"
+            image_mapping[new_filename] = var_name
+            counter += 1
+            return f"![]({new_filename})"
+        else:
+            return match.group(0)
+
+    new_md_text = re.sub(r"!\[\[(.*?)\]\]", replace_image, md_text)
+    return new_md_text, image_mapping
+
+# ---------- MARKDOWN HANDLING ----------
 
 def markdown_to_html(md_text):
     return markdown.markdown(md_text, extensions=["fenced_code", "codehilite", "tables"])
@@ -51,7 +74,7 @@ def markdown_to_html(md_text):
 
 link_css_classes = "text-secondary-foreground underline hover:text-secondary-foreground/80 transition-colors duration-100"
 
-def html_to_jsx(soup: BeautifulSoup, indent=2):
+def html_to_jsx(soup: BeautifulSoup, image_mapping: dict, indent=2):
     heading_classes = {
         "h1": "text-2xl font-bold my-4 text-secondary text-center md:text-start",
         "h2": "text-xl font-semibold my-3 text-secondary text-center md:text-start",
@@ -81,7 +104,6 @@ def html_to_jsx(soup: BeautifulSoup, indent=2):
         if tag_name == "code" and tag.parent.name != "pre":
             return f'{indent_str}<code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">{escape_jsx_text(tag.get_text())}</code>'
 
-
         if tag_name in {"ul", "ol"}:
             list_type_class = "list-disc" if tag_name == "ul" else "list-decimal"
             children = ''.join(process_tag(child, indent + 2) for child in tag.children)
@@ -90,7 +112,6 @@ def html_to_jsx(soup: BeautifulSoup, indent=2):
         if tag_name == "li":
             children = ''.join(process_tag(child, indent + 2) for child in tag.children)
             return f'{indent_str}<li>{children}</li>'
-
 
         if tag_name == "hr":
             return f'{indent_str}<hr className="bg-secondary/50 my-8 h-0.5" />'
@@ -109,9 +130,12 @@ def html_to_jsx(soup: BeautifulSoup, indent=2):
         if tag_name == "img":
             src = tag.get("src", "")
             alt = tag.get("alt", "")
+            image_var = image_mapping.get(os.path.basename(src), src)
+            jsx_img = f'<Image src={{{image_var}}} alt="{alt}" unoptimized className="max-w-full h-auto" />'
+
             if tag.parent.name == "p" and len(tag.parent.contents) == 1:
-                return f'{indent_str}<div className="flex justify-center my-4"><img src="{src}" alt="{alt}" className="max-w-full h-auto" /></div>'
-            return f'{indent_str}<img src="{src}" alt="{alt}" className="inline-block max-w-full h-auto mx-2" />'
+                return f'{indent_str}<div className="flex justify-center my-4">{jsx_img}</div>'
+            return f'{indent_str}{jsx_img}'
 
         if tag_name == "p" and len(tag.contents) == 1 and getattr(tag.contents[0], "name", None) == "img":
             return process_tag(tag.contents[0], indent)
@@ -170,10 +194,17 @@ def html_to_jsx(soup: BeautifulSoup, indent=2):
 
 # ---------- COMPONENT GENERATION ----------
 
-def generate_tsx_component(jsx: str, component_name: str):
+def generate_tsx_component(jsx: str, component_name: str, image_mapping: dict):
+    image_imports = "\n".join(
+        f'import {var} from "@/public/mdtotsx/{component_name}/{filename}";'
+        for filename, var in image_mapping.items()
+    )
+
     return f"""import React from "react";
 import Code from "@/components/Code";
 import Link from "next/link";
+import Image from "next/image";
+{image_imports}
 
 const {component_name} = () => {{
   return (
@@ -192,11 +223,13 @@ def convert(md_path, attachments_path, output_path, component_name):
     with open(md_path, "r", encoding="utf-8") as f:
         md_text = f.read()
 
-    md_text = inline_images(md_text, attachments_path)
+    public_image_dir = os.path.join("public", "mdtotsx", component_name)
+    md_text, image_mapping = extract_and_copy_images(md_text, attachments_path, public_image_dir)
+
     html = markdown_to_html(md_text)
     soup = BeautifulSoup(html, "html.parser")
-    jsx = html_to_jsx(soup)
-    tsx = generate_tsx_component(jsx, component_name)
+    jsx = html_to_jsx(soup, image_mapping)
+    tsx = generate_tsx_component(jsx, component_name, image_mapping)
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(tsx)
