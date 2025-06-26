@@ -7,6 +7,7 @@ export default function Home() {
       pageTitle="CTF Walkthroughs"
       posts={ctfPosts}
       tagsDisabled={true}
+      typeBeingSearched="CTFs"
     />
   );
 }

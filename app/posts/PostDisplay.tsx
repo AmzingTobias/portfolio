@@ -10,8 +10,14 @@ import { PostCardInfo } from "@/components/Posts/PostCard";
 const PostDisplay: React.FC<{
   posts: PostCardInfo[];
   tagsDisabled: boolean;
+  typeBeingSearched: string;
   pageTitle?: string;
-}> = ({ posts: initialPostCards, tagsDisabled, pageTitle = "Posts" }) => {
+}> = ({
+  posts: initialPostCards,
+  tagsDisabled,
+  typeBeingSearched,
+  pageTitle = "Posts",
+}) => {
   const defaultSearchValues: Search = {
     term: "",
     tagsToSearch: ALL_TAGS,
@@ -48,6 +54,7 @@ const PostDisplay: React.FC<{
             setSearchValues={setSearchValues}
             tagsDisabled={tagsDisabled}
             numberOfSearchResults={postcards.length}
+            typeReturned={typeBeingSearched}
           />
         }
       />

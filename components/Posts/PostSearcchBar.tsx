@@ -12,11 +12,13 @@ const PostSearchBar: React.FC<{
   setSearchValues: React.Dispatch<React.SetStateAction<Search>>;
   tagsDisabled: boolean;
   numberOfSearchResults: number;
+  typeReturned?: string;
 }> = ({
   searchValues,
   setSearchValues,
   tagsDisabled,
   numberOfSearchResults,
+  typeReturned,
 }) => {
   return (
     <div className="flex flex-col gap-4">
@@ -63,7 +65,9 @@ const PostSearchBar: React.FC<{
             </div>
           </div>
         )}
-        <small>Posts Retrieved: {numberOfSearchResults}</small>
+        <small>
+          {typeReturned} retrieved: {numberOfSearchResults}
+        </small>
       </div>
     </div>
   );

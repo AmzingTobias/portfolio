@@ -7,6 +7,7 @@ export default function Home() {
       pageTitle="Projects"
       posts={projectPosts}
       tagsDisabled={true}
+      typeBeingSearched="Projects"
     />
   );
 }

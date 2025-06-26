@@ -20,6 +20,5 @@ const blogPosts: PostCardInfo[] = [
   //   tag: TAGS.BLOG,
   //   date: new Date("2025-06-16"),
   // },
-];
-
+].sort((a, b) => (a.date < b.date ? 1 : -1));
 export default blogPosts;
