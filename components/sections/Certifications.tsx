@@ -29,15 +29,16 @@ const obtainedCertifications: ObtainedCert[] = [
   //   dateObtained: undefined,
   //   description: "(HTB CPTS)",
   // },
-  // {
-  //   image: {
-  //     src: burpsuiteCertifiedPractioner,
-  //     alt: "Burp Suite Certified Practitioner Badge",
-  //   },
-  //   name: "Burp Suite Certified Practitioner",
-  //   dateObtained: undefined,
-  //   description: "(BSCP)",
-  // },
+  {
+    image: {
+      src: burpsuiteCertifiedPractioner,
+      alt: "Burp Suite Certified Practitioner Badge",
+    },
+    name: "Burp Suite Certified Practitioner",
+    dateObtained: new Date("2025-09-16"),
+    expires: new Date("2031-09-16"),
+    abbreviation: "(BSCP)",
+  },
 ];
 
 const Certifications = () => {
