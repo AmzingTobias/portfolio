@@ -2,8 +2,8 @@ import Timeline, { TTimelineEvent } from "@/components/Timeline/Timeline";
 
 const educationEvents: TTimelineEvent[] = [
   {
-    title:
-      "First Class Honours B.Sc Computer Science - Loughborough university",
+    title: "First Class Honours B.Sc Computer Science",
+    role: "Loughborough university",
     startdate: "October 2020",
     endDate: "June 2024",
     bulletpointLists: [

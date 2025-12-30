@@ -64,23 +64,37 @@ const Timeline: React.FC<ITimelineProps> = ({ events }) => {
               }
             }}
           >
-            <div className="flex-start flex items-center">
-              <div className="-ml-[0.560rem] -mt-2 mr-[1.05rem] flex h-4 w-4 items-center justify-center rounded-full min-w-4 min-h-4 bg-secondary"></div>
-              <h4 className="-mt-2 text-md sm:text-xl font-semibold">
-                {event.title}
-              </h4>
+            <div className="flex items-start w-full">
+              <div className="-ml-[0.560rem] mt-1 mr-[1.05rem] flex h-4 w-4 min-w-4 min-h-4 rounded-full bg-secondary" />
+              <div className="flex-1">
+                <div className="flex justify-between items-center">
+                  <h4 className="text-md sm:text-xl font-semibold">
+                    {event.title}
+                  </h4>
+                  <p className="hidden sm:block text-sm sm:text-base italic font-semibold text-secondary-foreground whitespace-nowrap">
+                    {event.endDate
+                      ? `${event.startdate} - ${event.endDate}`
+                      : event.startdate}
+                  </p>
+                </div>
+
+                <h4 className="text-md sm:text-lg font-semibold mt-1 text-secondary-foreground">
+                  {event.role}
+                </h4>
+
+                <p className="mt-1 sm:hidden text-sm italic font-semibold text-secondary-foreground">
+                  {event.endDate
+                    ? `${event.startdate} - ${event.endDate}`
+                    : event.startdate}
+                </p>
+              </div>
             </div>
+
             <div
               className={`mb-1 ml-6 ${
                 index + 1 === events.length ? "pb-0" : "pb-6"
               }`}
             >
-              <h4 className="text-md sm:text-lg font-semibold">{event.role}</h4>
-              <p className="text-sm sm:text-base transition italic font-semibold text-secondary-foreground">
-                {event.endDate
-                  ? `${event.startdate} - ${event.endDate}`
-                  : event.startdate}
-              </p>
               <div
                 className={`mt-2 text-md sm:text-lg ${
                   index + 1 === events.length ? "mb-0" : "mb-4"
