@@ -33,7 +33,7 @@ const pricescraperProject: ProjectInfo = {
     "This change not only improved stability, but also gave me hands-on experience with systems programming and asynchronous networking in Rust.",
     "Previously, every game had to be added manually—including uploading the game artwork and typing in details like title and price.",
     "With the Rust rewrite, I added a game import feature: now, users can paste a link to a supported storefront, and the scraper will automatically extract the game's metadata and artwork, then store it in the database. This drastically reduced the friction in adding new games.",
-    "With the core system stable and the Rust-based scraper working reliably, my next goals is to recreate the web interface in Next.js and make some security improvements to the backend Express server.",
+    "With the core system stable and the Rust-based scraper working reliably, I turned my attention to recreating the web interface using Next.js. This framework change also provided an opportunity to improve the user experience, with a brand new modernised design and feel. Alongside this migration, I also made security improvements to the Express server. This phase was less about adding new features and more about modernising the stack.",
   ],
   images: {
     srcs: [
