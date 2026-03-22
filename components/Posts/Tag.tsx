@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import React from "react";
 
 export enum TAGS {
@@ -20,28 +19,23 @@ interface TagProps {
 const Tag: React.FC<TagProps> = ({ tag_for_post, selectable }) => {
   let displayText: string;
   let gradient: string;
-  let href: string;
 
   switch (tag_for_post) {
     case TAGS.BLOG:
       displayText = "#Blog";
       gradient = "linear-gradient(30deg, #1CB5E0 0%, #000851 100%)";
-      href = "/posts/blogs";
       break;
     case TAGS.CTF:
       displayText = "#CTF";
       gradient = "linear-gradient(30deg, #d53369 0%, #daae51 100%)";
-      href = "/posts/ctf";
       break;
     case TAGS.PROJECTS:
       displayText = "#Project";
       gradient = "linear-gradient(30deg, #efd5ff 0%, #515ada 100%)";
-      href = "/posts/projects";
       break;
     default:
       displayText = "";
       gradient = "";
-      href = "/";
   }
 
   return (

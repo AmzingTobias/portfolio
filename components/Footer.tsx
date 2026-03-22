@@ -9,7 +9,6 @@ const FOOTER_LINK_CLASS =
   "flex items-center align-middle gap-0.5 hover:font-semibold hover:underline-offset-4";
 
 export default async function Footer() {
-  "use server";
   const branch_request = await fetch(
     "https://api.github.com/repos/AmzingTobias/Portfolio/branches/main"
   );

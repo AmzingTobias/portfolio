@@ -35,7 +35,7 @@ const CertificationSpotlight: React.FC<{
             *Working Towards
           </p>
         ) : (
-          <p className="text-base text-secondary-foreground flex flex-col gap-1 lg:gap-2 items-center-safe lg:items-start justify-between">
+          <p className="text-base text-secondary-foreground flex flex-col gap-1 lg:gap-2 items-center lg:items-start justify-between">
             Obtained: {cert.dateObtained.toLocaleDateString("en-GB")}
             {cert.expires !== undefined &&
             cert.expires.valueOf() < Date.now() ? (

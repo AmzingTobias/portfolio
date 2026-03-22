@@ -1,6 +1,6 @@
 "use client";
 
-import PostSearchBar, { Search } from "@/components/Posts/PostSearcchBar";
+import PostSearchBar, { Search } from "@/components/Posts/PostSearchBar";
 import { useEffect, useState } from "react";
 import Section from "@/components/sections/Section";
 import PostGrid from "@/components/Posts/PostGrid";
