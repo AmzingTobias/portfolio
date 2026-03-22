@@ -7,7 +7,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import DropDown from "./Dropdown";
 import { useRef, useState } from "react";
@@ -31,7 +30,7 @@ const HorizontalNavbar: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <header
       className={cn(
-        "bg-background min-w-screen flex flex-col md:flex-row items-center p-3 justify-between max-w-screen sticky top-0 z-10 border-secondary/80  border-2",
+        "bg-background min-w-screen flex flex-col md:flex-row items-center p-3 justify-between max-w-screen sticky top-0 z-50 border-secondary/80  border-2",
         className
       )}
     >

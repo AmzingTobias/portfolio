@@ -21,7 +21,7 @@ const VerticalNavbar: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <div
       className={cn(
-        "w-full flex flex-col sticky top-0 z-10 bg-background",
+        "w-full flex flex-col sticky top-0 z-50 bg-background",
         className
       )}
     >

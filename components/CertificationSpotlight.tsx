@@ -25,6 +25,7 @@ const CertificationSpotlight: React.FC<{
         width={180}
         height={180}
         alt={cert.image.alt}
+        className="h-[180px]"
       />
       <div className="flex flex-col p-4 gap-2 font-medium items-center lg:items-baseline lg:text-start text-center">
         <h3 className="text-2xl">

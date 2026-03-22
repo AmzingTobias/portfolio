@@ -39,7 +39,7 @@ const ValleyWalkthrough = () => {
   <h1 className="text-2xl font-bold my-4 text-secondary text-center md:text-start">Port Scan</h1>
   <p className='my-2'>For port scanning, I'm going to conduct the initial scan with     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">rustscan</code>, and after the ports have been discovered,     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">rustscan</code> will past the discovered ports into     <code className="bg-accent text-white px-2 py-1 rounded text-sm font-mono">nmap</code> for server identification and to run the default scripts against these ports.</p>
   <Code language="bash" code={`rustscan -a 10.10.15.175 -- -A -sC -sV`} />
-  <div className="flex justify-center my-4"><Image src={image1} alt="" unoptimized className="max-w-full h-auto" /></div>
+  <div className="flex justify-center my-4"><Image src={image1} alt="" unoptimized loading="eager" className="max-w-full h-auto" /></div>
   <p className='my-2'>The scan revealed 3 open ports:</p>
   <div className="overflow-x-auto my-4">
     <table className="table-auto border-collapse border border-gray-300 w-full text-left">
