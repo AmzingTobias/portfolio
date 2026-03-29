@@ -29,7 +29,7 @@ const CertificationSpotlight: React.FC<{
       />
       <div className="flex flex-col p-4 gap-2 font-medium items-center lg:items-baseline lg:text-start text-center">
         <h3 className="text-2xl">
-          {cert.name} <span className="font-semibold">{cert.abbreviation}</span>
+          <span className="font-semibold">{cert.name}</span> {cert.abbreviation}
         </h3>
         {cert.dateObtained === undefined ? (
           <p className="text-lg font-bold text-secondary-foreground">
@@ -40,7 +40,7 @@ const CertificationSpotlight: React.FC<{
             Obtained: {cert.dateObtained.toLocaleDateString("en-GB")}
             {cert.expires !== undefined &&
             cert.expires.valueOf() < Date.now() ? (
-              <span className="text-secondary">
+              <span className="text-destructive">
                 Expired: {cert.expires.toLocaleDateString("en-GB")}
               </span>
             ) : (

@@ -1,10 +1,12 @@
 const getMyAge = (): number => {
-  const currentDate = new Date();
-  const birthdayDate = new Date("2002-06-27");
-  const timeDifference = currentDate.getTime() - birthdayDate.getTime();
-  // Calculate the number of years by dividing milliseconds by milliseconds per year
-  const yearsPassed = Math.floor(timeDifference / 31536000000);
-  return yearsPassed;
+  const today = new Date();
+  const birthday = new Date("2002-06-27");
+  let age = today.getFullYear() - birthday.getFullYear();
+  const monthDiff = today.getMonth() - birthday.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthday.getDate())) {
+    age--;
+  }
+  return age;
 };
 
 const AboutMe = () => {

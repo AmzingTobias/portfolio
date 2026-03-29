@@ -6,7 +6,6 @@ import CertificationSpotlight, {
 } from "@/components/CertificationSpotlight";
 import oscp from "@/public/certifications/oscp.png";
 import oscpPlus from "@/public/certifications/oscp-plus.png";
-import htbPenTesting from "@/public/certifications/HTB-Certified-Penetration-Testing-Specialist.webp";
 import burpsuiteCertifiedPractioner from "@/public/certifications/BurpSuite-Certified-Practioner.svg";
 
 const obtainedCertifications: ObtainedCert[] = [

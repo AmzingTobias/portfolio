@@ -35,9 +35,8 @@ const PostCard: React.FC<{ postcard: PostCardInfo; displayTag: boolean }> = ({
 
   return (
     <Link
-      style={{ maxWidth: 432 }}
       href={link_to_post}
-      className="flex flex-col gap-4 hover:cursor-pointer transition-colors duration-150 hover:hover:bg-secondary-foreground/5 p-4 w-full"
+      className="flex flex-col gap-4 hover:cursor-pointer transition-colors duration-150 hover:bg-secondary-foreground/5 p-4 w-full max-w-[432px]"
     >
       <Image
         src={postcard.image}

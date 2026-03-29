@@ -41,7 +41,7 @@ const PostDisplay: React.FC<{
     } else {
       setPostCards(filtered_for_tags);
     }
-  }, [searchValues]);
+  }, [searchValues, initialPostCards]);
 
   return (
     <div className="w-full flex flex-col gap-8">

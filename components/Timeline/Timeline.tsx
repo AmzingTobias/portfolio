@@ -1,6 +1,7 @@
 "use client";
 import { useRef, useEffect } from "react";
 import List, { ListProperties } from "@/components/Timeline/List";
+import { cn } from "@/lib/utils";
 
 export type TTimelineEvent = {
   title: string;
@@ -68,9 +69,9 @@ const Timeline: React.FC<ITimelineProps> = ({ events }) => {
               <div className="-ml-[0.560rem] mt-1 mr-[1.05rem] flex h-4 w-4 min-w-4 min-h-4 rounded-full bg-secondary" />
               <div className="flex-1">
                 <div className="flex justify-between items-center">
-                  <h4 className="text-md sm:text-xl font-semibold">
+                  <h3 className="text-md sm:text-xl font-semibold">
                     {event.title}
-                  </h4>
+                  </h3>
                   <p className="hidden sm:block text-sm sm:text-base italic font-semibold text-secondary-foreground whitespace-nowrap">
                     {event.endDate
                       ? `${event.startdate} - ${event.endDate}`
@@ -91,14 +92,16 @@ const Timeline: React.FC<ITimelineProps> = ({ events }) => {
             </div>
 
             <div
-              className={`mb-1 ml-6 ${
+              className={cn(
+                "mb-1 ml-6",
                 index + 1 === events.length ? "pb-0" : "pb-6"
-              }`}
+              )}
             >
               <div
-                className={`mt-2 text-md sm:text-lg ${
+                className={cn(
+                  "mt-2 text-md sm:text-lg",
                   index + 1 === events.length ? "mb-0" : "mb-4"
-                }`}
+                )}
               >
                 <p>{event.details}</p>
                 <div className="mt-2">

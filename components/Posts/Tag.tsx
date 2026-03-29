@@ -41,7 +41,8 @@ const Tag: React.FC<TagProps> = ({ tag_for_post, selectable }) => {
   return (
     <div
       className={cn(
-        "w-fit p-1 rounded-2xl cursor-pointer",
+        "w-fit px-2 py-1 rounded-2xl",
+        selectable !== undefined && "cursor-pointer",
         selectable === undefined
           ? "opacity-100"
           : selectable.selected === true
